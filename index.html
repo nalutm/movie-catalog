@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <title>Filmes Populares</title>
+</head>
+<body>
+  <header class="header id="top">
+    <h1 class="header__title">Filmes Populares</h1>
+    <div class="search-box" data-movie="language">
+      <div class="search-icon-box">
+        <img src="./assets/img/search-icon.svg" alt="Lupa" aria-label="Pesquisar" data-movies="searchIcon">
+      </div>
+      <input class="search-movie" type="text" placeholder="Digite algum filme para pesquisar..." data-movies="search">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <select name="language" id="language" class="language">
+        <option value="Português" class="option" selected>Português</option>
+        <option value="English" class="option">English</option>
+      </select>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="chk" id="chk1" class="checkbox" data-movie="show-favorite">
+      <label for="chk1">
+        Mostrar meus filmes favoritos apenas
+      </label>
+    </div>
+  </header>
+    <a href="#top" class="page-top inactive" data-movies="top">topo</a>
+    <section class="movies">
+      <ul data-movies="list">
+      </ul>
+      <div class="pagination" data-movies="pagination">
+        <ul class="pagination__list">
+          <li class="pagination__page" data-page="1" data-language>1</li>
+          <li class="pagination__page" data-page="2" data-language>2</li>
+          <li class="pagination__page" data-page="3" data-language>3</li>
+          <li class="pagination__page" data-page="4" data-language>4</li>
+          <li class="pagination__page" data-page="5" data-language>5</li>
+        </ul>
+      </div>
+      
+    </section>
+    
+    <script src="./dist/main.js"></script>
+    <script type="module" src="./assets/js/language-select-element.js"></script>
+</body>
+</html>

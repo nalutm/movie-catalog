@@ -1,0 +1,81 @@
+.movie-card {
+  animation: show .3s forwards;
+  align-items: center;
+  background-color: $card-bg;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $white;
+  display: flex;
+  margin-bottom: 48px;
+  min-height: 200px;
+  padding: 15px 24px;
+  width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .movie-card__img-container {
+    height: 139px;
+    width: 139px;
+  }
+
+  .movie__info {
+    flex-grow: 1;
+    margin-left: 65px;
+
+    @media screen and (max-width: 1024px) {
+      margin-left: 0;
+    }
+
+    .movie__info-title {
+      font-weight: 500;
+      line-height: 32px;
+      margin-bottom: 24px;
+      max-width: 90%;
+
+      @media screen and (max-width: 1024px) {
+        text-align: center;
+      }
+    }
+  }
+
+  .movie__description {
+    line-height: 32px;
+    width: 50%;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 10px;
+      width: 90%;
+    }
+  }
+
+  .movie__info-icons {
+    display: flex;
+    gap: 45px;
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+    }
+
+    .icon-container {
+      display: flex;
+      gap: 12px;
+
+      .icon__img-container {
+        height: 19px;
+        width: 20px;
+      }
+
+      &:nth-child(2) {
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        
+        &:hover {
+         color: $red;
+        }
+      }  
+    }
+  }
+}

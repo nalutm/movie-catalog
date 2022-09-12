@@ -1,0 +1,28 @@
+.pagination {
+  display: none;
+
+    &.active {
+      display: block;
+    }
+}
+
+.pagination__list {
+  box-sizing: border-box;
+  color: $white;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  .pagination__page {
+    background-color: $card-bg;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: all .5s ease-in-out;
+    
+      &:hover, &.active {
+        background-color: $chk;
+      }
+  }
+}

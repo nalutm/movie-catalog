@@ -1,0 +1,40 @@
+@keyframes showTop {
+  from {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  } to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hideTop {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  } to {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  }
+}
+
+.page-top {
+  @include btn;
+  animation: hideTop .3s forwards;
+  opacity: 0;
+  position: fixed;
+  padding: 20px;
+  right: 20px;
+  text-transform: uppercase;
+  transition: all 5 ease-in-out;
+  z-index: 100;
+  
+  &.inactive {
+    display: none;
+  }
+
+  &.active {
+    animation: showTop .3s forwards;
+    opacity: 1;
+  }
+}
