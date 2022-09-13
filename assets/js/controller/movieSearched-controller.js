@@ -1,6 +1,5 @@
 import { clientApi } from "../service/client-api.js";
 import { renderMovie } from "../render-movie.js";
-import { pagination } from "../pagination.js";
 import renderMoviesList from "./moviesList-controller.js";
 
 const showWarning = (text) => {
@@ -27,7 +26,6 @@ const searchMovie = async (movieName, movieList, input) => {
     });
   }
   movies.forEach(movie => renderMovie(movie)); 
-  // pagination.removePagination($pagination);
 }
 
 export default searchMovie;

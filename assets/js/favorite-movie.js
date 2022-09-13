@@ -1,5 +1,4 @@
 export const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || []; 
-// let isFavorite;
 
 export function favoriteMovie(evt) {
   const $heartIcon = this.querySelector('[data-movie="favorite"]');
