@@ -47,7 +47,7 @@ Finalizado
 
 ## Linguagens Utilizadas
 * HTML;
-* CSS;
+* SASS;
 * JS
 
 ## Acesso ao projeto
