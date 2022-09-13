@@ -125,6 +125,7 @@ img {
   }
 }
 .movie-card .movie__info .movie__info-title {
+  cursor: default;
   font-weight: 500;
   line-height: 32px;
   margin-bottom: 24px;
@@ -136,6 +137,7 @@ img {
   }
 }
 .movie-card .movie__description {
+  cursor: default;
   line-height: 32px;
   width: 50%;
 }
@@ -162,6 +164,9 @@ img {
   height: 19px;
   width: 20px;
 }
+.movie-card .movie__info-icons .icon-container:nth-child(1) {
+  cursor: default;
+}
 .movie-card .movie__info-icons .icon-container:nth-child(2) {
   cursor: pointer;
   transition: all 0.5s ease-in-out;
@@ -179,6 +184,7 @@ img {
   flex-direction: column;
 }
 .header .header__title {
+  cursor: default;
   font-size: 36px;
   font-weight: 600;
   margin: 60px 0 45px;
