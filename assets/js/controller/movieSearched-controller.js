@@ -10,7 +10,7 @@ const showWarning = (text) => {
 </div>`
 }
 
-const searchMovie = async (movieName, movieList, $pagination, input) => {
+const searchMovie = async (movieName, movieList, input) => {
   const movieSearched = await clientApi.getMoviesSearched(movieName);
   const movies = movieSearched.results;
   movieList.innerHTML = '';
@@ -27,7 +27,7 @@ const searchMovie = async (movieName, movieList, $pagination, input) => {
     });
   }
   movies.forEach(movie => renderMovie(movie)); 
-  pagination.removePagination($pagination);
+  // pagination.removePagination($pagination);
 }
 
 export default searchMovie;
