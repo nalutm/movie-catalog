@@ -427,11 +427,11 @@ img {
 .header .checkbox label:focus::before, .header .checkbox label:hover::before {
   background: #706EA8;
 }
-.header .checkbox input:checked + label::before {
+.header .checkbox.input-chk + label::before {
   background: #706EA8;
   border-color: #706EA8;
 }
-.header .checkbox input:checked + label::after {
+.header .checkbox.input-chk + label::after {
   opacity: 1;
 }
 

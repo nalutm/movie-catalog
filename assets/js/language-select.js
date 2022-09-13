@@ -3,6 +3,8 @@ import { pagination } from './pagination.js'
 
 const chooseLanguage = () => {
   document.addEventListener('DOMContentLoaded', () => {
+  const $checkbox = document.querySelector('[data-movie="show-favorite"]');
+  if ($checkbox.classList.contains('input-chk')) $checkbox.classList.remove('input-chk');
   const $pagination = document.querySelector('[data-movies="pagination"]');
   const pages = Array.from($pagination.children[0].children);
   const $select = document.querySelector('[tabindex="0"]');
@@ -10,6 +12,8 @@ const chooseLanguage = () => {
   $options.forEach(option => {
     option.addEventListener('click', (e) => {
       const language = e.target.innerHTML;
+      const $checkbox = document.querySelector('[data-movie="show-favorite"]');
+      $checkbox.classList.remove('input-chk');
       const page = pages.find(page => page.dataset.language === 'active').innerHTML;
         if (language === 'Português') {
           renderMoviesList(page, 'pt-BR');
@@ -22,6 +26,8 @@ const chooseLanguage = () => {
 
     option.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') {
+        const $checkbox = document.querySelector('[data-movie="show-favorite"]');
+        $checkbox.classList.remove('input-chk');
         const language = e.target.innerHTML;
         const page = pages.find(page => page.dataset.language === 'active').innerHTML;
           if (language === 'Brasil') {

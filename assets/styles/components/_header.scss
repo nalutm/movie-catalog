@@ -258,13 +258,14 @@
     background: $chk;
   }
 
-  .checkbox input:checked + label::before {
+   .checkbox.input-chk + label::before {
     background: $chk;
     border-color: $chk;
   }
 
-  .checkbox input:checked + label::after {
+  .checkbox.input-chk + label::after {
     opacity: 1;
   }
+    
 
 }

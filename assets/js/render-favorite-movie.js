@@ -5,19 +5,16 @@ import { clientApi } from "./service/client-api.js";
 import { pagination } from "./pagination.js";
 
 const $pagination = document.querySelector('[data-movies="pagination"]');
-
-let checked = false;
-
 const moviesList = document.querySelector('[data-movies="list"]');
 
 export const showFavorite = async () => {
-  checked = !checked;
   pagination.removePagination($pagination);
   const $language = document.querySelector('.nice-select');
   const language = $language.children[0].innerHTML;
-  $language.classList.add('inactive');
-  
-  if (checked) {
+  const $checkbox = document.querySelector('[data-movie="show-favorite"]');
+
+  if (!$checkbox.classList.contains('input-chk')) {
+    $checkbox.classList.add('input-chk');
     if (favoriteMovies.length === 0) {
       moviesList.innerHTML = '<p class="warning">Você não possui filmes favoritados</p>';
     } else {
@@ -28,10 +25,10 @@ export const showFavorite = async () => {
           renderMovie(response);
       })
     }
-      
-  } else {
+  } 
+  else {
+    $checkbox.classList.remove('input-chk');
     moviesList.innerHTML = '';
-    $language.classList.remove('inactive');
     if (language === 'Português') renderMoviesList(1, 'pt-BR');
     else if (language === 'English') renderMoviesList(1, 'en-US');
   }

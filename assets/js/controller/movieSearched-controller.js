@@ -19,7 +19,6 @@ const searchMovie = async (movieName, movieList, $pagination, input) => {
 
   if (movies.length === 0) {
     movieList.innerHTML = showWarning('Não encontramos resultados para esse filme');
-    console.log(language);
     const $listBack = document.querySelector('[data-movies="listBack"]');
     $listBack.addEventListener('click', () => {
       input.value = '';
