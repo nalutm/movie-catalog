@@ -1,3 +1,8 @@
+<div  style="display: inline_block">
+  <img align="center" alt="Nalu-JS" height="75" width="75" src="./assets/img/tmdb-logo.svg">
+  <img align="center" alt="Nalu-JS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> 
+</div>
+
 # JavaScript e DOM | API
 
 ### Tópicos
@@ -15,7 +20,7 @@
 
 ## Descrição do projeto
 
-Resolução do desafio [7 days of code](https://7daysofcode.io/) sobre JavaScript e DOM que consiste em consumir a API de filmes do "The Movie DataBase" e desenvolver uma página de filmes populares com JavaScript puro.
+Resolução do desafio [7 days of code](https://7daysofcode.io/) sobre JavaScript e DOM que consiste em consumir a API de filmes do [The Movie DataBase](https://www.themoviedb.org/) e desenvolver uma página de filmes populares com JavaScript puro.
 
 ### Funcionalidades
 Além de listar os 100 filmes mais populares do momento, a aplicação permite:
