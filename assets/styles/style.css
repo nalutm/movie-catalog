@@ -437,6 +437,7 @@ img {
 
 .movies {
   margin: 0 auto;
+  min-height: 50vh;
   width: 90%;
 }
 
@@ -520,7 +521,6 @@ img {
   display: flex;
   gap: 30px;
   justify-content: center;
-  margin-bottom: 50px;
 }
 .pagination__list .pagination__page {
   background-color: #1D1C3B;
@@ -572,4 +572,10 @@ img {
   .warning__link {
     width: 30%;
   }
+}
+
+.tmdb-logo-box {
+  margin: 0 auto;
+  height: 175px;
+  width: 240px;
 }/*# sourceMappingURL=style.css.map */
