@@ -35,13 +35,11 @@ A partir desse desafio treinei:
 ## Screenshot 
 
 ### Mobile
-Em breve
 <div align="center">
   <img src="./docs/screenshot-mobile.png" alt="Screenshot layout mobile">
 </div>
 
 ### Desktop
-Em breve
 ![Screenshot layout desktop](./docs/screenshot-desktop.png)
 
 ## Status do Projeto
