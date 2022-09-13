@@ -10,22 +10,24 @@ const showWarning = (text) => {
 }
 
 const searchMovie = async (movieName, movieList, input) => {
-  const movieSearched = await clientApi.getMoviesSearched(movieName);
+  const $language = document.querySelector('.nice-select');
+  const languageOption = $language.children[0].innerHTML;
+  const language = languageOption !== 'Português' ? 'en-US' : 'pt-BR';
+  
+  const movieSearched = await clientApi.getMoviesSearched(movieName, language);
   const movies = movieSearched.results;
   movieList.innerHTML = '';
-  const $language = document.querySelector('.nice-select');
-  const language = $language.children[0].innerHTML;
 
   if (movies.length === 0) {
     movieList.innerHTML = showWarning('Não encontramos resultados para esse filme');
     const $listBack = document.querySelector('[data-movies="listBack"]');
     $listBack.addEventListener('click', () => {
       input.value = '';
-      if (language === 'Português') renderMoviesList(1, 'pt-BR');
-      if (language === 'English') renderMoviesList(1, 'en-US');
+      renderMoviesList(1, language);
     });
   }
-  movies.forEach(movie => renderMovie(movie)); 
+
+  movies.forEach(movie => renderMovie(movie));
 }
 
 export default searchMovie;

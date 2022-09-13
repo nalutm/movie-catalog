@@ -10,7 +10,8 @@ const moviesList = document.querySelector('[data-movies="list"]');
 export const showFavorite = async () => {
   pagination.removePagination($pagination);
   const $language = document.querySelector('.nice-select');
-  const language = $language.children[0].innerHTML;
+  const languageOption = $language.children[0].innerHTML;
+  const language = languageOption !== 'Português' ? 'en-US' : 'pt-BR';
   const $checkbox = document.querySelector('[data-movie="show-favorite"]');
 
   if (!$checkbox.classList.contains('input-chk')) {
@@ -20,7 +21,7 @@ export const showFavorite = async () => {
     } else {
       moviesList.innerHTML = '';
       favoriteMovies.forEach(async (item) => {
-          const response = await clientApi.getFavoriteMovie(item);
+          const response = await clientApi.getFavoriteMovie(item, language);
           response.isFavorite = true;
           renderMovie(response);
       })
@@ -29,7 +30,6 @@ export const showFavorite = async () => {
   else {
     $checkbox.classList.remove('input-chk');
     moviesList.innerHTML = '';
-    if (language === 'Português') renderMoviesList(1, 'pt-BR');
-    else if (language === 'English') renderMoviesList(1, 'en-US');
+    renderMoviesList(1, language);
   }
 }

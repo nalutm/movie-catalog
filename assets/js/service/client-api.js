@@ -6,9 +6,9 @@ const error = (err, msgError) => {
   throw new Error(msgError);
 }
 
-const getMovies = async (page, country) => {
+const getMovies = async (page, language) => {
   try {
-    const movies = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${country}&page=${page}`);
+    const movies = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=${language}&page=${page}`);
     const moviesJSON = await movies.json();
     return moviesJSON;
   } catch (err) {
@@ -16,9 +16,9 @@ const getMovies = async (page, country) => {
   }
 }
 
-const getMoviesSearched = async (movieName) => {
+const getMoviesSearched = async (movieName, language) => {
   try {
-    const movieSearched = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=pt-BR&query=${movieName}&page=1&include_adult=false`);
+    const movieSearched = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=${language}&query=${movieName}&page=1&include_adult=false`);
     const movieJSON = await movieSearched.json();
     return movieJSON;
   } catch(err) {
@@ -26,9 +26,9 @@ const getMoviesSearched = async (movieName) => {
   }
 }
 
-const getFavoriteMovie = async (id) => {
+const getFavoriteMovie = async (id, language) => {
   try {
-    const favoriteMovie = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=pt-BR`);
+    const favoriteMovie = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=${language}`);
     const favoriteMovieJSON = await favoriteMovie.json();
     return favoriteMovieJSON;
   } catch(err) {
