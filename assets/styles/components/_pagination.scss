@@ -15,13 +15,18 @@
 
   .pagination__page {
     background-color: $card-bg;
+    border: none;
     border-radius: 5px;
+    color: $white;
     cursor: pointer;
+    font-family: $font;
+    font-size: 20px;
     padding: 10px 15px;
     transition: all .5s ease-in-out;
     
       &:hover, &.active {
         background-color: $chk;
       }
+
   }
 }

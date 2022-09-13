@@ -1,12 +1,16 @@
 import renderMoviesList from "./controller/moviesList-controller.js";
 import { pagination } from './pagination.js'
+// import { pages } from "./controller/moviesList-controller.js";
 
 const chooseLanguage = () => {
   document.addEventListener('DOMContentLoaded', () => {
   const $checkbox = document.querySelector('[data-movie="show-favorite"]');
   if ($checkbox.classList.contains('input-chk')) $checkbox.classList.remove('input-chk');
+
   const $pagination = document.querySelector('[data-movies="pagination"]');
-  const pages = Array.from($pagination.children[0].children);
+  const pagesLi = Array.from($pagination.children[0].children); 
+  const pages = pagesLi.map(pageLi => pageLi.children[0]);
+
   const $select = document.querySelector('[tabindex="0"]');
   const $options = Array.from($select.children[1].children);
   $options.forEach(option => {
@@ -16,11 +20,11 @@ const chooseLanguage = () => {
       $checkbox.classList.remove('input-chk');
       const page = pages.find(page => page.dataset.language === 'active').innerHTML;
         if (language === 'Português') {
+          pagination.removePagination($pagination);
           renderMoviesList(page, 'pt-BR');
-          pagination.removePagination($pagination);
         } else if (language === 'English') {
-          renderMoviesList(page, 'en-US');
           pagination.removePagination($pagination);
+          renderMoviesList(page, 'en-US');
         }
     });
 
